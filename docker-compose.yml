@@ -4,12 +4,10 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    #restart: always
-    ports: 
-      - 51003:1972
-      - 52003:52773
-      - 53773
-    #network_mode: "host"
+    restart: always
+    command: --check-caps false --ISCAgent false
+    ports:
+      - 41773:1972
+      - 42773:52773
     volumes:
-    #  - ~/iris.key:/usr/irissys/mgr/iris.key
       - ./:/irisdev/app

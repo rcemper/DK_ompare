@@ -10,6 +10,7 @@ RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
 USER ${ISC_PACKAGE_MGRUSER}
 
 COPY  udl udl
+COPY .iris_init /home/irisowner/.iris_init
 
 COPY module.xml module.xml
 COPY iris.script /tmp/iris.script
